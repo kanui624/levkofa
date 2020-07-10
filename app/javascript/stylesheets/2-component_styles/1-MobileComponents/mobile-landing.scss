@@ -8,9 +8,10 @@
     flex-flow: column wrap;
 
     h1 {
-      @include vt_font;
-      font-size: 60px;
-      color: white;
+      @include worksans_font;
+      font-size: 30px;
+      color: black;
+      opacity: 1;
     }
   }
 }

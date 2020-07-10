@@ -1,12 +1,12 @@
 //  Font Mixins
-@mixin share_font {
-  font-family: "Share Tech Mono", monospace;
+@mixin worksans_font {
+  font-family: "Work Sans", sans-serif;
 }
 
-@mixin russo_font {
-  font-family: "Russo One", sans-serif;
+@mixin libre_font {
+  font-family: "Libre Franklin", sans-serif;
 }
 
-@mixin vt_font {
-  font-family: "VT323", monospace;
+@mixin roboto_font {
+  font-family: "Roboto Mono", monospace;
 }

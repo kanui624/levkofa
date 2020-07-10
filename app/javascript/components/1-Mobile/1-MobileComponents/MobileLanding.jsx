@@ -1,33 +1,21 @@
 import React, { useEffect, useRef } from "react";
-import gsap, { Power3 } from "gsap";
+import gsap from "gsap";
 
 function MobileLanding() {
-  let firstName = useRef(null);
-  let lastName = useRef(null);
+  let fName = useRef(null);
 
   useEffect(() => {
-    gsap.from(firstName, {
-      duration: 2,
+    const tl = gsap.timeline();
+    tl.from(fName, {
+      duration: 3,
       opacity: 0,
-      x: 50,
-      y: -100,
-      ease: Power3.easeout,
-    });
-
-    gsap.from(lastName, {
-      duration: 2,
-      opacity: 0,
-      x: -50,
-      y: 100,
-      ease: Power3.easeout,
-    });
+    }).to(fName, { duration: 3, y: -800 });
   }, []);
 
   return (
     <div id="mobile-landing">
       <div id="mobile-hero">
-        <h1 ref={(e) => (firstName = e)}>lev</h1>
-        <h1 ref={(e) => (lastName = e)}>kofa</h1>
+        <h1 ref={(e) => (fName = e)}>levkofa</h1>
       </div>
     </div>
   );
