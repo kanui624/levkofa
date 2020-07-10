@@ -1,0 +1,16 @@
+// 1 - Gloabl_Var_Func_Mix
+@import "stylesheets/1-global_var_func_mix/global_init";
+@import "stylesheets/1-global_var_func_mix/global_mixins";
+
+// 2 - component_styles
+@import "stylesheets/2-component_styles/0-DesktopComponents/desktop-landing";
+@import "stylesheets/2-component_styles/1-MobileComponents/mobile-landing";
+
+// 3 - Sections
+
+// 4 - Pages
+
+// 4 - Media Queries
+@import "stylesheets/5-media_queries/portrait_media_queries";
+
+// External
