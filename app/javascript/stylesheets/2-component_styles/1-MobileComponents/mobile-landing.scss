@@ -1,5 +1,6 @@
 #a-m {
-  height: 300vh;
+  height: 900vh;
+  background-color: rgb(179, 179, 179);
   #b-m {
     height: 100vh;
     position: relative;
@@ -7,15 +8,17 @@
     justify-content: center;
     align-items: center;
     #c-m {
-      @include worksans_font;
-      color: black;
+      @include roboto_font;
+      color: yellow;
       font-size: 25px;
-    }
-    #g-m {
-      @include worksans_font;
-      color: white;
-      font-size: 25px;
-      display: none;
     }
   }
+}
+
+#g-m {
+  @include worksans_font;
+  color: black;
+  font-size: 25px;
+  display: none;
+  opacity: 0;
 }

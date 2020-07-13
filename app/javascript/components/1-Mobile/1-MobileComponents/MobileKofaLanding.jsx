@@ -14,18 +14,23 @@ function MobileKofaLanding() {
         start: "top top",
         end: () => window.innerHeight * 2,
         scrub: true,
+        markers: true,
       },
     });
-    tl.to("#a-m", {
-      backgroundColor: "black",
+    tl.to("#c-m", {
+      scale: 350,
+      display: "none",
     })
-      .to("#c-m", {
-        scale: 150,
-        opacity: 0,
-        display: "none",
-      })
+      .to(
+        "#a-m",
+        {
+          backgroundColor: "yellow",
+        },
+        0
+      )
       .to("#g-m", {
         display: "block",
+        opacity: 1,
       });
   }, []);
 
