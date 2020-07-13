@@ -1,12 +1,8 @@
 import React from "react";
-import MobileLanding from "../1-MobileComponents/MobileLanding";
+import MobileLanding from "../1-MobileComponents/MobileKofaLanding";
 
 function pageOneM() {
-  return (
-    <div>
-      <MobileLanding />
-    </div>
-  );
+  return <MobileLanding />;
 }
 
 export default pageOneM;

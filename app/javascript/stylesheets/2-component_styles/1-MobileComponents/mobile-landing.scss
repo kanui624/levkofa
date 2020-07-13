@@ -1,130 +1,21 @@
-#mobile-landing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  #mobile-hero {
+#a-m {
+  height: 300vh;
+  #b-m {
+    height: 100vh;
+    position: relative;
     display: flex;
-    flex-flow: column wrap;
-
-    h1 {
+    justify-content: center;
+    align-items: center;
+    #c-m {
       @include worksans_font;
-      font-size: 30px;
       color: black;
-      opacity: 1;
+      font-size: 25px;
+    }
+    #g-m {
+      @include worksans_font;
+      color: white;
+      font-size: 25px;
+      display: none;
     }
   }
 }
-
-// // #lassus_vid {
-// //   position: fixed;
-// //   right: 0;
-// //   bottom: 0;
-// //   min-width: 100%;
-// //   min-height: 100%;
-// //   z-index: -1;
-// // }
-// #mobile_landing {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-//   #mobile_hero {
-//     display: flex;
-//     flex-flow: column wrap;
-
-//     h1 {
-//       @include vt_font;
-//       font-size: 60px;
-//       color: white;
-//     }
-
-//     button {
-//       display: grid;
-//       margin: auto;
-//       @include vt_font;
-//       color: white;
-//       font-size: 25px;
-//       text-decoration: none;
-//       cursor: pointer;
-//       // -webkit-animation: blink 0.5s infinite;
-//       // -moz-animation: blink 0.5s infinite;
-//       // animation: blink 0.5s infinite;
-//       background-color: rgba(255, 255, 255, 0);
-//     }
-
-//     button:focus {
-//       outline: none;
-//     }
-
-//     button:hover {
-//       transform: rotate(180deg);
-//     }
-
-//     // @-webkit-keyframes blink {
-//     //   0% {
-//     //     @include vt_font;
-//     //   }
-//     //   20% {
-//     //     @include share_font;
-//     //   }
-//     //   40% {
-//     //     @include russo_font;
-//     //     text-transform: uppercase;
-//     //   }
-//     //   60% {
-//     //     @include vt_font;
-//     //   }
-//     //   80% {
-//     //     @include share_font;
-//     //   }
-//     //   100% {
-//     //     @include russo_font;
-//     //   }
-//     // }
-
-//     // @-moz-keyframes blink {
-//     //   0% {
-//     //     @include vt_font;
-//     //   }
-//     //   20% {
-//     //     @include share_font;
-//     //   }
-//     //   40% {
-//     //     @include russo_font;
-//     //     text-transform: uppercase;
-//     //   }
-//     //   60% {
-//     //     @include vt_font;
-//     //   }
-//     //   80% {
-//     //     @include share_font;
-//     //   }
-//     //   100% {
-//     //     @include russo_font;
-//     //   }
-//     // }
-
-//     // @keyframes blink {
-//     //   0% {
-//     //     @include vt_font;
-//     //   }
-//     //   20% {
-//     //     @include share_font;
-//     //   }
-//     //   40% {
-//     //     @include russo_font;
-//     //     text-transform: uppercase;
-//     //   }
-//     //   60% {
-//     //     @include vt_font;
-//     //   }
-//     //   80% {
-//     //     @include share_font;
-//     //   }
-//     //   100% {
-//     //     @include russo_font;
-//     //   }
-//     // }
-//   }
-// }
