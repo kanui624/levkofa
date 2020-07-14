@@ -1,12 +1,12 @@
 // 1 - Gloabl_Var_Func_Mix
 @import "stylesheets/1-global_var_func_mix/global_init";
 @import "stylesheets/1-global_var_func_mix/global_mixins";
+@import "stylesheets/1-global_var_func_mix/global_variables";
 
-// 2 - component_styles
-@import "stylesheets/2-component_styles/0-DesktopComponents/desktop-landing";
-@import "stylesheets/2-component_styles/1-MobileComponents/mobile-landing";
+// 2 - page_styles
 
-// 3 - Sections
+// 3 - component_styles
+@import "stylesheets/3-component_styles/navigation";
 
 // 4 - Pages
 
