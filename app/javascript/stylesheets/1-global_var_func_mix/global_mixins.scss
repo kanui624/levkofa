@@ -10,3 +10,13 @@
 @mixin roboto_font {
   font-family: "Roboto Mono", monospace;
 }
+
+// Nav Sizing
+@mixin nav_sizing {
+  height: 100vh;
+  width: 100vw;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Collapse from "./Collapse";
+import TempCollapse from "./TempCollapse";
 import { withRouter, Link } from "react-router-dom";
 
-const Navigation = ({ history }) => {
+const TempNavigation = ({ history }) => {
   const [state, setState] = useState({
     initial: false,
     clicked: null,
@@ -46,24 +46,16 @@ const Navigation = ({ history }) => {
   };
 
   return (
-    <header>
-      <div className="container">
-        <div className="wrapper">
-          <div className="inner-header">
-            <div className="logo">
-              <Link to="/">kofa</Link>
-            </div>
-            <div className="menu">
-              <button disabled={disabled} onClick={handleMenu}>
-                {state.menuName}
-              </button>
-            </div>
-          </div>
-        </div>
+    <div className="container mx-auto relative">
+      <div id="ax" className="relative flex justify-between my-8">
+        <Link to="/">kofa</Link>
+        <button disabled={disabled} onClick={handleMenu}>
+          {state.menuName}
+        </button>
       </div>
-      <Collapse state={state} />
-    </header>
+      <TempCollapse state={state} />
+    </div>
   );
 };
 
-export default withRouter(Navigation);
+export default withRouter(TempNavigation);

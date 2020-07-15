@@ -1,0 +1,138 @@
+// // Global css
+// .container {
+//   width: 100%;
+//   // margin: 0 auto;
+//   // padding: 0px 50px;
+//   .wrapper {
+//     .home {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       height: 100%;
+//       width: 100%;
+//       p {
+//         @include roboto_font;
+//         font-size: 25px;
+//         font-weight: 300;
+//       }
+//       h5 {
+//         @include roboto_font;
+//         display: flex;
+//         flex-flow: column wrap;
+//         font-size: 1.8rem;
+//         font-wieght: 300;
+//         padding-right: 360px;
+//       }
+//     }
+//   }
+// }
+
+// // Navigation css
+// header {
+//   height: 100px;
+//   .inner-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     position: relative;
+//     z-index: 10;
+//     height: 100px;
+//     .logo a {
+//       @include roboto_font;
+//       font-weight: 700;
+//       text-decoration: none;
+//       color: $kofaBlack;
+//     }
+//     .menu {
+//       button {
+//         @include roboto_font;
+//         border: none;
+//         background: none;
+//         outline: none;
+//         cursor: pointer;
+//         color: $kofaBlack;
+//       }
+//     }
+//   }
+// Collapse css
+.coll-menu {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.nav-black-bg {
+  background-color: $kofaBlack;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.menu-layer {
+  position: relative;
+  background-color: $kofaYellow;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  .menu-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 200px;
+    nav {
+      display: block;
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          @include roboto_font;
+          list-style: none;
+          font-size: 35px;
+          font-weight: 300;
+          cursor: pointer;
+          height: 50px;
+          overflow: hidden;
+          position: relative;
+          width: 700px;
+          a {
+            position: absolute;
+            color: $kofaGrey;
+            text-decoration: none;
+            &:hover {
+              color: $kofaBlack;
+            }
+          }
+        }
+      }
+    }
+    .info {
+      position: relative;
+      color: $kofaGrey;
+      width: 300px;
+      h3 {
+        @include roboto_font;
+        font-size: 15px;
+      }
+      p {
+        @include roboto_font;
+        margin: 0 auto;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+// }
