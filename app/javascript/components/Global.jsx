@@ -1,11 +1,11 @@
 import React from "react";
-import TempNavigation from "./0-Landing/TempNavigation";
+import Navigation from "./9-UniComps/1-Nav/0-Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Global = () => {
   return (
     <Router>
-      <TempNavigation />
+      <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/writings" component={TempWriting} />
@@ -14,8 +14,8 @@ const Global = () => {
         <Route exact path="/design" component={TempDesign} />
         <Route exact path="/interviews" component={TempInterview} />
         <Route exact path="/kofastream" component={TempStream} />
-        <Route exact path="/rest" component={TempRest} />
-        <Route exact path="/contact" component={TempAboutContact} />
+        <Route exact path="/therest" component={TempRest} />
+        <Route exact path="/aboutcontact" component={TempAboutContact} />
       </Switch>
     </Router>
   );

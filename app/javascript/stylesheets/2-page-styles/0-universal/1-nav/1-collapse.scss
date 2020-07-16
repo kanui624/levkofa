@@ -1,0 +1,64 @@
+#bx {
+  display: none;
+  #dx {
+    background-color: $kofaYellow;
+    li {
+      @include roboto_font;
+      font-size: 50px;
+      color: $kofaGrey;
+      text-decoration: none;
+      text-align: center;
+      &:hover {
+        @include worksans_font;
+        color: $kofaBlack;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+// #bx {
+//   display: none;
+// z-index: 9;
+// #cx {
+//   z-index: -1;
+// }
+// #dx {
+//   background-color: $kofaYellow;
+//   li {
+//     @include roboto_font;
+//     font-size: 50px;
+//     color: $kofaGrey;
+//     text-decoration: none;
+//     text-align: center;
+//     &:hover {
+//       @include worksans_font;
+//       color: $kofaBlack;
+//       transform: rotate(-180deg);
+//       animation: blink 0.5s infinite;
+// @keyframes blink {
+//   0% {
+//     @include libre_font;
+//   }
+//   20% {
+//     @include worksans_font;
+//     display: none;
+//   }
+//   40% {
+//     @include roboto_font;
+//   }
+//   60% {
+//     @include libre_font;
+//     display: none;
+//   }
+//   80% {
+//     @include worksans_font;
+//   }
+//   100% {
+//     @include roboto_font;
+//   }
+// }
+//       }
+//     }
+//   }
+// }

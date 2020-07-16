@@ -1,0 +1,75 @@
+// import React, { useState, useEffect, useRef } from "react";
+// import { withRouter, Link } from "react-router-dom";
+// import gsap from "gsap";
+// import Collapse from "./1-Collapse";
+
+// const Navigation = ({ history }) => {
+//   let hideMenu = useRef(null);
+//   const [state, setState] = useState({
+//     initial: false,
+//     clicked: null,
+//     menuName: "menu",
+//   });
+
+//   const [disabled, setDisabled] = useState(false);
+
+//   useEffect(() => {
+//     history.listen(() => {
+//       setState({ clicked: false, menuName: "menu" });
+//     });
+//   }, [history]);
+
+//   const handleMenu = () => {
+//     disableMenu();
+//     if (state.initial === false) {
+//       gsap.to(hideMenu, {
+//         duration: 0.8,
+//         opacity: 1,
+//       });
+//       setState({
+//         initial: null,
+//         clicked: true,
+//       });
+//       setTimeout(() => {
+//         setState({
+//           menuName: "close",
+//         });
+//       }, 800);
+//     } else if (state.clicked === true) {
+//       setState({
+//         clicked: !state.clicked,
+//         menuName: "menu",
+//       });
+//     } else if (state.clicked === false) {
+//       setState({
+//         clicked: !state.clicked,
+//         menuName: "close",
+//       });
+//     }
+//   };
+
+//   const disableMenu = () => {
+//     setDisabled(!disabled);
+//     setTimeout(() => {
+//       setDisabled(false);
+//     }, 800);
+//   };
+
+//   return (
+//     <div className="container mx-auto relative">
+//       <div id="ax" className="relative flex justify-between my-8">
+//         <Link to="/">kofa</Link>
+//         <button
+//           ref={(e) => (hideMenu = e)}
+//           disabled={disabled}
+//           onClick={handleMenu}
+//         >
+//           {state.menuName}
+//         </button>
+//       </div>
+//       <Collapse state={state} />
+//     </div>
+//   );
+// };
+
+// export default withRouter(Navigation);

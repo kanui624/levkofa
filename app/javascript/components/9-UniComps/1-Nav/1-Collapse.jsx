@@ -6,26 +6,37 @@ import {
   menuCssOut,
   menuCssIn,
   menuToggle,
-} from "../../gsap/navCollapse";
+} from "../../../gsap/Collapse";
 
-const TempCollapse = ({ state }) => {
+const Collapse = ({ clickState }) => {
   let menu = useRef(null);
   let revealMenuBackground = useRef(null);
   let revealMenu = useRef(null);
 
+  const linkList = [
+    { i: 1, n: "writings", r: "/writings" },
+    { i: 2, n: "audio", r: "/audio" },
+    { i: 3, n: "video", r: "/video" },
+    { i: 4, n: "design", r: "/design" },
+    { i: 5, n: "interviews", r: "/interviews" },
+    { i: 6, n: "kofastream", r: "/kofastream" },
+    { i: 7, n: "the rest", r: "/therest" },
+    { i: 8, n: "about/contact", r: "/aboutcontact" },
+  ];
+
   useEffect(() => {
-    if (state.clicked === false) {
+    if (clickState.clicked === false) {
       staggerRevealClose(revealMenu, revealMenuBackground);
       menuCssOut(menu);
     } else if (
-      state.clicked === true ||
-      (state.clicked === true && state.initial === null)
+      clickState.clicked === true ||
+      (clickState.clicked === true && clickState.initial === null)
     ) {
       menuCssIn(menu);
       menuToggle(revealMenuBackground, revealMenu);
       staggerReveal(revealMenuBackground, revealMenu);
     }
-  }, [state]);
+  }, [clickState]);
 
   return (
     <>
@@ -47,30 +58,13 @@ const TempCollapse = ({ state }) => {
           <div className="realtive flex inset-0 h-full max-w-full justify-between items-center">
             <nav className="container mx-auto flex justify-center items-center">
               <ul className="link-font">
-                <li>
-                  <Link to="/writings">writings</Link>
-                </li>
-                <li>
-                  <Link to="/audio">audio</Link>
-                </li>
-                <li>
-                  <Link to="/video">video</Link>
-                </li>
-                <li>
-                  <Link to="/design">design</Link>
-                </li>
-                <li>
-                  <Link to="/interviews">interviews</Link>
-                </li>
-                <li>
-                  <Link to="/kofastream">kofastream</Link>
-                </li>
-                <li>
-                  <Link to="/rest">the rest</Link>
-                </li>
-                <li>
-                  <Link to="/contact">about/contact</Link>
-                </li>
+                {linkList.map((l) => {
+                  return (
+                    <li key={l.i}>
+                      <Link to={l.r}>{l.n}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           </div>
@@ -80,4 +74,4 @@ const TempCollapse = ({ state }) => {
   );
 };
 
-export default TempCollapse;
+export default Collapse;
