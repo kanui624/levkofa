@@ -6,7 +6,7 @@ import {
   menuCssOut,
   menuCssIn,
   menuToggle,
-} from "../../../gsap/Collapse";
+} from "../../../gsap/G-Collapse";
 
 const Collapse = ({ clickState }) => {
   let menu = useRef(null);

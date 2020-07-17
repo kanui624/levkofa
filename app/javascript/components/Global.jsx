@@ -1,4 +1,5 @@
 import React from "react";
+import KofaHome from "./0-RootHome/0-KofaHome";
 import Navigation from "./9-UniComps/1-Nav/0-Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -11,7 +12,7 @@ const Global = () => {
         </div>
         <div id="page-stack-context">
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={KofaHome} />
             <Route exact path="/writings" component={TempWriting} />
             <Route exact path="/audio" component={TempAudio} />
             <Route exact path="/video" component={TempVideo} />
@@ -24,21 +25,6 @@ const Global = () => {
         </div>
       </div>
     </Router>
-  );
-};
-
-const Home = () => {
-  return (
-    <div id="initializer" className="fixed inset-0 h-full max-w-full">
-      <div id="page-outter" className="flex h-full max-w-full">
-        <div
-          id="page-container"
-          className="flex justify-center items-center container mx-auto"
-        >
-          <p id="page-item">temp kofahome page</p>
-        </div>
-      </div>
-    </div>
   );
 };
 

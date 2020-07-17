@@ -5,11 +5,13 @@
 @import "stylesheets/1-init-var-func-mix/3-mixins";
 
 // 2 - PAGE-STYLES
-// UNIVERSAL COMPONENTS
-@import "stylesheets/2-page-styles/0-universal/0-stack-context/0-stack-context";
-@import "stylesheets/2-page-styles/0-universal/0-stack-context/test_animation";
-@import "stylesheets/2-page-styles/0-universal/1-nav/0-navigation";
-@import "stylesheets/2-page-styles/0-universal/1-nav/1-collapse";
+// 0 - ROOT-HOME
+@import "stylesheets/2-page-styles/0-root-home/0-kofa-home";
+// 9 - UNIVERSAL COMPONENTS
+@import "stylesheets/2-page-styles/9-universal/0-stack-context/0-stack-context";
+@import "stylesheets/2-page-styles/9-universal/0-stack-context/test_animation";
+@import "stylesheets/2-page-styles/9-universal/1-nav/0-navigation";
+@import "stylesheets/2-page-styles/9-universal/1-nav/1-collapse";
 
 // 3 - MEDIA-QUERIES
 @import "stylesheets/3-media-queries/0-portrait";

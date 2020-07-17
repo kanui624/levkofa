@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
-import { fadeMenuOut, fadeMenuIn } from "../../../gsap/Navigation";
+import { fadeMenuOut, fadeMenuIn } from "../../../gsap/G-Navigation";
 import Collapse from "./1-Collapse";
 
 const Navigation = ({ history }) => {
@@ -10,7 +10,7 @@ const Navigation = ({ history }) => {
   });
 
   const [nameState, setNameState] = useState({
-    menuName: "|||",
+    menuName: "^",
   });
 
   const [disabled, setDisabled] = useState(false);
@@ -18,7 +18,7 @@ const Navigation = ({ history }) => {
   const timeOutMenu = () => {
     setTimeout(() => {
       setNameState({
-        menuName: "|||",
+        menuName: "^",
       });
     }, 500);
   };
@@ -78,7 +78,7 @@ const Navigation = ({ history }) => {
   };
 
   return (
-    <div className="container mx-auto relative">
+    <div className="container mx-auto relative px-4">
       <div id="ax" className="relative flex justify-between my-8">
         <Link onClick={transitionMenu} disabled={disabled} to="/">
           kofa
