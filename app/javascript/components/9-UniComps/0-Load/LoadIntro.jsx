@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
-function LoadIntro() {
+const LoadIntro = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -19,18 +19,13 @@ function LoadIntro() {
     tl.to("#c-m", {
       scale: 350,
       display: "none",
-    })
-      .to(
-        "#a-m",
-        {
-          backgroundColor: "yellow",
-        },
-        0
-      )
-      .to("#g-m", {
-        display: "block",
-        opacity: 1,
-      });
+    }).to(
+      "#a-m",
+      {
+        backgroundColor: "yellow",
+      },
+      0
+    );
   }, []);
 
   return (
@@ -40,6 +35,6 @@ function LoadIntro() {
       </div>
     </div>
   );
-}
+};
 
 export default LoadIntro;

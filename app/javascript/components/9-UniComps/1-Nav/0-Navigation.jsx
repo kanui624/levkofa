@@ -10,7 +10,7 @@ const Navigation = ({ history }) => {
   });
 
   const [nameState, setNameState] = useState({
-    menuName: "menu",
+    menuName: "|||",
   });
 
   const [disabled, setDisabled] = useState(false);
@@ -18,7 +18,7 @@ const Navigation = ({ history }) => {
   const timeOutMenu = () => {
     setTimeout(() => {
       setNameState({
-        menuName: "menu",
+        menuName: "|||",
       });
     }, 500);
   };
@@ -26,7 +26,7 @@ const Navigation = ({ history }) => {
   const timeOutClose = () => {
     setTimeout(() => {
       setNameState({
-        menuName: "close",
+        menuName: "X",
       });
     }, 500);
   };
@@ -72,19 +72,15 @@ const Navigation = ({ history }) => {
       timeOutMenu();
       setNotClick();
     } else if (clickState.clicked === false) {
-      timeOutClose();
       setNotClick();
+      timeOutClose();
     }
   };
 
   return (
     <div className="container mx-auto relative">
-      <div
-        id="ax"
-        disabled={disabled}
-        className="relative flex justify-between my-8"
-      >
-        <Link onClick={transitionMenu} to="/">
+      <div id="ax" className="relative flex justify-between my-8">
+        <Link onClick={transitionMenu} disabled={disabled} to="/">
           kofa
         </Link>
         <button onClick={handleMenu} disabled={disabled}>
