@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+
 import {
   staggerReveal,
   staggerRevealClose,
   menuCssOut,
   menuCssIn,
   menuToggle,
+  linkStaggerOpen,
 } from "../../../gsap/G-Collapse";
 
 const Collapse = ({ clickState }) => {
@@ -21,7 +23,7 @@ const Collapse = ({ clickState }) => {
     { i: 5, n: "interviews", r: "/interviews" },
     { i: 6, n: "kofastream", r: "/kofastream" },
     { i: 7, n: "the rest", r: "/therest" },
-    { i: 8, n: "about/contact", r: "/aboutcontact" },
+    { i: 8, n: "contact", r: "/aboutcontact" },
   ];
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const Collapse = ({ clickState }) => {
       menuCssIn(menu);
       menuToggle(revealMenuBackground, revealMenu);
       staggerReveal(revealMenuBackground, revealMenu);
+      linkStaggerOpen("#link-id");
     }
   }, [clickState]);
 
@@ -57,10 +60,10 @@ const Collapse = ({ clickState }) => {
         >
           <div className="realtive flex inset-0 h-full max-w-full justify-between items-center">
             <nav className="container mx-auto flex justify-center items-center">
-              <ul className="link-font">
+              <ul className="grid grid-rows-8 link-font o max-w-full">
                 {linkList.map((l) => {
                   return (
-                    <li key={l.i}>
+                    <li className="bg-black px-4" id="link-id" key={l.i}>
                       <Link to={l.r}>{l.n}</Link>
                     </li>
                   );

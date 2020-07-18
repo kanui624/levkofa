@@ -1,31 +1,42 @@
-#page-outter {
-  border: dashed black;
-  border-width: 5px;
-  #blue {
-    border: solid rgb(0, 217, 255);
-    border-width: 1px;
-    margin: 1px;
-    box-shadow: 4px 4px 8px 5px yellow;
-    #green {
-      border: solid rgb(9, 255, 0);
-      border-width: 1px;
-      margin: 1px;
-      #purple {
-        border: solid rgb(132, 0, 255);
-        border-width: 1px;
-        margin: 1px;
-        #pink {
-          border: solid rgb(255, 0, 191);
-          border-width: 1px;
-          margin: 1px;
-          p {
-            @include libre_font;
-            color: $kofaGrey;
-            text-align: center;
-            font-size: 15px;
-          }
-        }
-      }
-    }
-  }
+#one {
+  border: dashed rgb(255, 0, 0);
+  border-width: 3px;
 }
+#two {
+  border: dashed rgb(0, 17, 255);
+  border-width: 3px;
+}
+
+// #page-outter {
+//   #page-container {
+//     border: dashed black;
+//     border-width: 3px;
+//     #blue {
+//       border: solid rgb(0, 217, 255);
+//       border-width: 1px;
+//       margin: 1px;
+//       // box-shadow: 4px 4px 8px 5px yellow;
+//       #green {
+//         border: solid rgb(9, 255, 0);
+//         border-width: 1px;
+//         margin: 1px;
+//         #purple {
+//           border: solid rgb(132, 0, 255);
+//           border-width: 1px;
+//           margin: 1px;
+//           #pink {
+//             border: solid rgb(255, 0, 191);
+//             border-width: 1px;
+//             margin: 1px;
+//             p {
+//               @include libre_font;
+//               color: $kofaGrey;
+//               text-align: center;
+//               font-size: 15px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

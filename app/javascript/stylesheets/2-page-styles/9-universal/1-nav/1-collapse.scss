@@ -4,19 +4,31 @@
     background-color: $kofaYellow;
     li {
       @include roboto_font;
-      font-size: 50px;
+      font-size: 18px;
       color: $kofaGrey;
       text-decoration: none;
       text-align: center;
+      line-height: 40px;
+      font-weight: 200;
       &:hover {
-        @include worksans_font;
-        color: $kofaBlack;
-        transform: rotate(-180deg);
+        @include libre_font;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
       }
     }
   }
 }
 
+.o {
+  overflow: hidden;
+}
+
+// import w_roma from "../images/logo/w_roma.png";
+// <img
+// id="wht_nav_logo"
+// src={require("../images/logo/w_roma.png")}
+// alt="Roma Logo"
+// />
 // #bx {
 //   display: none;
 // z-index: 9;

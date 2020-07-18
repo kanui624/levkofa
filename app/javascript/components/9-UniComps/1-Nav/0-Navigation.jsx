@@ -10,7 +10,7 @@ const Navigation = ({ history }) => {
   });
 
   const [nameState, setNameState] = useState({
-    menuName: "^",
+    menuName: ">",
   });
 
   const [disabled, setDisabled] = useState(false);
@@ -18,7 +18,7 @@ const Navigation = ({ history }) => {
   const timeOutMenu = () => {
     setTimeout(() => {
       setNameState({
-        menuName: "^",
+        menuName: ">",
       });
     }, 500);
   };
@@ -26,7 +26,7 @@ const Navigation = ({ history }) => {
   const timeOutClose = () => {
     setTimeout(() => {
       setNameState({
-        menuName: "X",
+        menuName: "<",
       });
     }, 500);
   };
@@ -80,12 +80,12 @@ const Navigation = ({ history }) => {
   return (
     <div className="container mx-auto relative px-4">
       <div id="ax" className="relative flex justify-between my-8">
-        <Link onClick={transitionMenu} disabled={disabled} to="/">
-          kofa
-        </Link>
         <button onClick={handleMenu} disabled={disabled}>
           {nameState.menuName}
         </button>
+        <Link onClick={transitionMenu} disabled={disabled} to="/">
+          kofa
+        </Link>
       </div>
       <Collapse clickState={clickState} />
     </div>

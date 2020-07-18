@@ -1,6 +1,7 @@
 #ax {
   z-index: 10;
   @include roboto_font;
-  font-size: 25px;
+  font-size: 20px;
   color: $kofaGrey;
+  font-weight: 200;
 }
