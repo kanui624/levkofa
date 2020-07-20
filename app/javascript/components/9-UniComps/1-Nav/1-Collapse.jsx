@@ -60,7 +60,7 @@ const Collapse = ({ clickState }) => {
         >
           <div className="realtive flex inset-0 h-full max-w-full justify-between items-center">
             <nav className="container mx-auto flex justify-center items-center">
-              <ul className="grid grid-rows-8 link-font o max-w-full">
+              <ul className="grid grid-rows-8 max-w-full">
                 {linkList.map((l) => {
                   return (
                     <li className="bg-black px-4" id="link-id" key={l.i}>

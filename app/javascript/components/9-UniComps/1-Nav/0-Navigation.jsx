@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
-import { fadeMenuOut, fadeMenuIn } from "../../../gsap/G-Navigation";
+import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
+import {
+  fadeMenuOut,
+  fadeMenuIn,
+  flipArrowLeft,
+  flipArrowRight,
+} from "../../../gsap/G-Navigation";
 import Collapse from "./1-Collapse";
 
 const Navigation = ({ history }) => {
@@ -9,26 +15,18 @@ const Navigation = ({ history }) => {
     clicked: null,
   });
 
-  const [nameState, setNameState] = useState({
-    menuName: ">",
-  });
-
   const [disabled, setDisabled] = useState(false);
 
   const timeOutMenu = () => {
     setTimeout(() => {
-      setNameState({
-        menuName: ">",
-      });
+      flipArrowLeft("#flip-arrow");
     }, 500);
   };
 
   const timeOutClose = () => {
     setTimeout(() => {
-      setNameState({
-        menuName: "<",
-      });
-    }, 500);
+      flipArrowRight("#flip-arrow");
+    }, 300);
   };
 
   const transitionMenu = () => {
@@ -80,8 +78,8 @@ const Navigation = ({ history }) => {
   return (
     <div className="container mx-auto relative px-4">
       <div id="ax" className="relative flex justify-between my-8">
-        <button onClick={handleMenu} disabled={disabled}>
-          {nameState.menuName}
+        <button id="flip-arrow" onClick={handleMenu} disabled={disabled}>
+          <TrendingFlatIcon />
         </button>
         <Link onClick={transitionMenu} disabled={disabled} to="/">
           kofa

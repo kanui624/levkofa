@@ -11,15 +11,16 @@
       line-height: 40px;
       font-weight: 200;
       &:hover {
-        @include libre_font;
+        @include worksans_font;
         color: rgb(255, 255, 255);
+        font-size: 17px;
         text-transform: uppercase;
       }
     }
   }
 }
 
-.o {
+.link-width {
   overflow: hidden;
 }
 
