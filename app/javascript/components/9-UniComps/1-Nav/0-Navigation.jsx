@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
-import {
-  fadeMenuOut,
-  fadeMenuIn,
-  flipArrowLeft,
-  flipArrowRight,
-} from "../../../gsap/G-Navigation";
+import { arrowLeft, arrowRight } from "../../../gsap/G-Navigation";
 import Collapse from "./1-Collapse";
 
 const Navigation = ({ history }) => {
@@ -17,24 +12,12 @@ const Navigation = ({ history }) => {
 
   const [disabled, setDisabled] = useState(false);
 
-  const timeOutMenu = () => {
-    setTimeout(() => {
-      flipArrowLeft("#flip-arrow");
-    }, 500);
-  };
-
-  const timeOutClose = () => {
-    setTimeout(() => {
-      flipArrowRight("#flip-arrow");
-    }, 300);
-  };
-
-  const transitionMenu = () => {
-    fadeMenuOut("#ax");
-    setTimeout(() => {
-      fadeMenuIn("#ax");
-    }, 500);
-  };
+  useEffect(() => {
+    history.listen(() => {
+      flipRight();
+      setClickState({ clicked: false });
+    });
+  }, [history]);
 
   const disableMenu = () => {
     setDisabled(!disabled);
@@ -49,41 +32,47 @@ const Navigation = ({ history }) => {
     });
   };
 
-  useEffect(() => {
-    history.listen(() => {
-      timeOutMenu();
-      transitionMenu();
-      setClickState({ clicked: false });
-    });
-  }, [history]);
+  const flipLeft = () => {
+    arrowLeft("#fade-flip-arrow");
+  };
 
-  const handleMenu = () => {
+  const flipRight = () => {
+    arrowRight("#fade-flip-arrow");
+  };
+
+  const handleArrow = () => {
     disableMenu();
-    transitionMenu();
     if (clickState.initial === false) {
-      timeOutClose();
+      flipLeft();
       setClickState({
         initial: null,
         clicked: true,
       });
     } else if (clickState.clicked === true) {
-      timeOutMenu();
+      flipRight();
       setNotClick();
     } else if (clickState.clicked === false) {
+      flipLeft();
       setNotClick();
-      timeOutClose();
     }
   };
 
   return (
-    <div className="container mx-auto relative px-4">
-      <div id="ax" className="relative flex justify-between my-8">
-        <button id="flip-arrow" onClick={handleMenu} disabled={disabled}>
-          <TrendingFlatIcon />
-        </button>
-        <Link onClick={transitionMenu} disabled={disabled} to="/">
-          kofa
-        </Link>
+    <div className="container mx-auto relative my-8">
+      <div className="grid">
+        <div
+          id="arrow-z-index"
+          className="relative flex justify-start items-center"
+        >
+          <button
+            id="fade-flip-arrow"
+            className="flex justify-center items-center"
+            onClick={handleArrow}
+            disabled={disabled}
+          >
+            <TrendingFlatIcon style={{ fontSize: 30 }} />
+          </button>
+        </div>
       </div>
       <Collapse clickState={clickState} />
     </div>

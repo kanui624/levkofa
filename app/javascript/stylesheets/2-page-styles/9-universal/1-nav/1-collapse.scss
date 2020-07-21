@@ -2,26 +2,28 @@
   display: none;
   #dx {
     background-color: $kofaYellow;
-    li {
-      @include roboto_font;
-      font-size: 18px;
-      color: $kofaGrey;
-      text-decoration: none;
-      text-align: center;
-      line-height: 40px;
-      font-weight: 200;
+    ul {
+      #page-links {
+        @include roboto_font;
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px;
+        font-weight: 200;
+        color: white;
+        font-size: 18px;
+        &:hover {
+          @include worksans_font;
+          text-transform: uppercase;
+          background-color: white;
+          color: $kofaBlack;
+          font-size: 17px;
+        }
+      }
       &:hover {
-        @include worksans_font;
-        color: rgb(255, 255, 255);
-        font-size: 17px;
-        text-transform: uppercase;
+        cursor: pointer;
       }
     }
   }
-}
-
-.link-width {
-  overflow: hidden;
 }
 
 // import w_roma from "../images/logo/w_roma.png";
