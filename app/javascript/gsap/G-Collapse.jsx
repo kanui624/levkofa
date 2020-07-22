@@ -5,7 +5,7 @@ export const staggerReveal = (node1, node2) => {
     duration: 0.8,
     width: 0,
     transformOrigin: "right top",
-    skewY: 2,
+    skewX: 2,
     ease: "power3.inOut",
     stagger: {
       amount: 0.05,
@@ -43,36 +43,14 @@ export const menuToggle = (node1, node2) => {
   });
 };
 
-export const linkStaggerOpen = (node1, node2) => {
-  gsap.from([node1, node2], {
-    duration: 1.2,
+export const linkStaggerOpen = (node1) => {
+  gsap.from(node1, {
+    duration: 1,
     opacity: 0,
-    rotateY: 180,
+    rotateX: 180,
     ease: "power3.inOut",
     stagger: {
-      amount: 0.8,
+      amount: 0.5,
     },
   });
 };
-
-// export const logoIn = (node1) => {
-//   let tl = gsap.timeline();
-//   tl.to(node1, {
-//     display: "block",
-//   }).to(node1, {
-//     duration: 1,
-//     rotateY: -180,
-//     opacity: 1,
-//   });
-// };
-
-// export const logoOut = (node1) => {
-//   let tl = gsap.timeline();
-//   tl.to(node1, {
-//     duration: 0.3,
-//     rotateY: 0,
-//     opacity: 0,
-//   }).to(node1, {
-//     display: "none",
-//   });
-// };

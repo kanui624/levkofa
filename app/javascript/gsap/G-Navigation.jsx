@@ -24,6 +24,7 @@ export const arrowRight = (node1) => {
       color: "rgb(183, 184, 159)",
     })
     .to(node1, {
+      duration: 0.2,
       opacity: 1,
     });
 };

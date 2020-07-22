@@ -29,16 +29,16 @@ const Collapse = ({ clickState }) => {
 
   useEffect(() => {
     if (clickState.clicked === false) {
-      staggerRevealClose(revealMenu, revealMenuBackground);
       menuCssOut(menu);
+      staggerRevealClose(revealMenu, revealMenuBackground);
     } else if (
       clickState.clicked === true ||
       (clickState.clicked === true && clickState.initial === null)
     ) {
       menuCssIn(menu);
+      linkStaggerOpen("#page-links");
       menuToggle(revealMenuBackground, revealMenu);
       staggerReveal(revealMenuBackground, revealMenu);
-      linkStaggerOpen("#kofa-link", "#page-links");
     }
   }, [clickState]);
 
@@ -63,8 +63,10 @@ const Collapse = ({ clickState }) => {
             <ul className="grid grid-rows-8">
               {linkList.map((l) => {
                 return (
-                  <li className="bg-black px-4" id="page-links" key={l.i}>
-                    <Link to={l.r}>{l.n}</Link>
+                  <li id="page-links" className="bg-black" key={l.i}>
+                    <Link className="px-4" to={l.r}>
+                      {l.n}
+                    </Link>
                   </li>
                 );
               })}

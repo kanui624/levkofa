@@ -1,6 +1,7 @@
 import React from "react";
 import KofaHome from "./0-RootHome/0-KofaHome";
 import Navigation from "./9-UniComps/1-Nav/0-Navigation";
+import AudioComps from "./2-Audio/0-AudioComps";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Global = () => {
@@ -14,7 +15,7 @@ const Global = () => {
           <Switch>
             <Route exact path="/" component={KofaHome} />
             <Route exact path="/writings" component={TempWriting} />
-            <Route exact path="/audio" component={TempAudio} />
+            <Route exact path="/audio" component={AudioComps} />
             <Route exact path="/video" component={TempVideo} />
             <Route exact path="/design" component={TempDesign} />
             <Route exact path="/interviews" component={TempInterview} />

@@ -11,10 +11,11 @@
         font-weight: 200;
         color: white;
         font-size: 18px;
+        transition: background-color 0.2s;
         &:hover {
           @include worksans_font;
           text-transform: uppercase;
-          background-color: white;
+          background-color: $kofaYellow;
           color: $kofaBlack;
           font-size: 17px;
         }
@@ -25,55 +26,3 @@
     }
   }
 }
-
-// import w_roma from "../images/logo/w_roma.png";
-// <img
-// id="wht_nav_logo"
-// src={require("../images/logo/w_roma.png")}
-// alt="Roma Logo"
-// />
-// #bx {
-//   display: none;
-// z-index: 9;
-// #cx {
-//   z-index: -1;
-// }
-// #dx {
-//   background-color: $kofaYellow;
-//   li {
-//     @include roboto_font;
-//     font-size: 50px;
-//     color: $kofaGrey;
-//     text-decoration: none;
-//     text-align: center;
-//     &:hover {
-//       @include worksans_font;
-//       color: $kofaBlack;
-//       transform: rotate(-180deg);
-//       animation: blink 0.5s infinite;
-// @keyframes blink {
-//   0% {
-//     @include libre_font;
-//   }
-//   20% {
-//     @include worksans_font;
-//     display: none;
-//   }
-//   40% {
-//     @include roboto_font;
-//   }
-//   60% {
-//     @include libre_font;
-//     display: none;
-//   }
-//   80% {
-//     @include worksans_font;
-//   }
-//   100% {
-//     @include roboto_font;
-//   }
-// }
-//       }
-//     }
-//   }
-// }

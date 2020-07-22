@@ -70,7 +70,7 @@ const Navigation = ({ history }) => {
             onClick={handleArrow}
             disabled={disabled}
           >
-            <TrendingFlatIcon style={{ fontSize: 30 }} />
+            <TrendingFlatIcon style={{ fontSize: 32 }} />
           </button>
         </div>
       </div>
