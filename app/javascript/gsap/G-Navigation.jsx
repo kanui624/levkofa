@@ -9,7 +9,6 @@ export const arrowLeft = (node1) => {
     duration: 0.3,
     rotateY: 180,
     opacity: 1,
-    color: "black",
   });
 };
 
@@ -21,7 +20,6 @@ export const arrowRight = (node1) => {
   })
     .to(node1, {
       rotateY: 0,
-      color: "rgb(183, 184, 159)",
     })
     .to(node1, {
       duration: 0.2,

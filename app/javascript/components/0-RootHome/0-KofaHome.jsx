@@ -1,17 +1,14 @@
 import React from "react";
+import PageDems from "../9-UniComps/2-PageDems/0-PageDems";
 
 const KofaHome = () => {
   return (
-    <div id="initializer" className="fixed inset-0 h-full max-w-full">
-      <div id="page-outter" className="grid h-full max-w-full">
-        <div id="page-container" className="container mx-auto">
-          <div className="grid grid-cols-2 grid-rows-1 h-full">
-            <div id="one" />
-            <div id="two" />
-          </div>
-        </div>
+    <PageDems>
+      <div className="grid grid-cols-2 grid-rows-1 h-full">
+        <div id="one" />
+        <div id="two" />
       </div>
-    </div>
+    </PageDems>
   );
 };
 

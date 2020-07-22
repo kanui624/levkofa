@@ -2,5 +2,11 @@
   z-index: 10;
   #fade-flip-arrow {
     color: $kofaGrey;
+    border: none;
+    outline: none;
+    transition: color 0.3s;
+    &:hover {
+      color: black;
+    }
   }
 }

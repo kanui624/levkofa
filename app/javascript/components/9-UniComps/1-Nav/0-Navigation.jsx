@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
 import { arrowLeft, arrowRight } from "../../../gsap/G-Navigation";
 import Collapse from "./1-Collapse";
@@ -66,7 +66,7 @@ const Navigation = ({ history }) => {
         >
           <button
             id="fade-flip-arrow"
-            className="flex justify-center items-center"
+            className="flex justify-center items-center px-4"
             onClick={handleArrow}
             disabled={disabled}
           >
