@@ -23,6 +23,6 @@ class Api::V1::PodcastController < ApplicationController
   private 
 
   def podcast_params
-    params.require(:podcast).permit(:title, :summary, files: [])
+    params.require(:podcast).permit(:title, :summary)
   end
 end
