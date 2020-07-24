@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import KofaHome from "./0-RootHome/0-KofaHome";
@@ -8,7 +8,7 @@ import AdminLogin from "./11-Admin/0-AdminLogin";
 
 const Global = () => {
   const [loginState, setLoginState] = useState({
-    loggedInStatus: "NOT_LOGGED_IN",
+    loggedInStatus: "LOGGED_OUT",
     user: {},
   });
 
@@ -18,7 +18,7 @@ const Global = () => {
       .then((response) => {
         if (
           response.data.logged_in &&
-          loginState.loggedInStatus === "NOT_LOGGED_IN"
+          loginState.loggedInStatus === "LOGGED_OUT"
         ) {
           setLoginState({
             loggedInStatus: "LOGGED_IN",
@@ -29,7 +29,7 @@ const Global = () => {
           loginState.loggedInStatus === "LOGGED_IN"
         ) {
           setLoginState({
-            loggedInStatus: "NOT_LOGGED_IN",
+            loggedInStatus: "LOGGED_OUT",
             user: {},
           });
         }
@@ -39,9 +39,9 @@ const Global = () => {
       });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     checkLoginStatus();
-  }, []);
+  }, [loginState.loggedInStatus]);
 
   const handleLogin = (data) => {
     setLoginState({
@@ -52,7 +52,7 @@ const Global = () => {
 
   const handleLogout = (data) => {
     setLoginState({
-      loggedInStatus: "NOT_LOGGED_IN",
+      loggedInStatus: "LOGGED_OUT",
       user: {},
     });
   };
