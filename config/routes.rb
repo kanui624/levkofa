@@ -6,3 +6,4 @@ Rails.application.routes.draw do
   root to: 'levkofa_pages#levkofa'
   get '*path', to: 'levkofa_pages#levkofa', via: :all
 end
+ 

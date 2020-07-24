@@ -1,8 +1,9 @@
 import React from "react";
-import KofaHome from "./0-RootHome/0-KofaHome";
-import Navigation from "./9-UniComps/1-Nav/0-Navigation";
-import AudioComps from "./2-Audio/0-AudioComps";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import KofaHome from "./0-RootHome/0-KofaHome";
+import AudioComps from "./2-Audio/0-AudioComps";
+import Navigation from "./9-UniComps/1-Nav/0-Navigation";
+import AdminAuth from "./11-AdminAuth/0-AdminAuth";
 
 const Global = () => {
   return (
@@ -22,6 +23,7 @@ const Global = () => {
             <Route exact path="/kofastream" component={TempStream} />
             <Route exact path="/therest" component={TempRest} />
             <Route exact path="/aboutcontact" component={TempAboutContact} />
+            <Route exact path="/adminauth" component={AdminAuth} />
           </Switch>
         </div>
       </div>
