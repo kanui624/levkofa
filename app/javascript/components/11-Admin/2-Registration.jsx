@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 
-const Registration = () => {
+const Registration = (props) => {
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -23,10 +23,13 @@ const Registration = () => {
           { withCredentials: true }
         )
         .then((response) => {
-          console.log("registration response", response);
+          if (response.data.status === "created") {
+            props.handleSuccessfulAuth(response.data);
+          }
+          console.log("registered");
         })
         .catch((error) => {
-          console.log("registration error", error);
+          console.log(error);
         });
     },
   });
@@ -34,7 +37,7 @@ const Registration = () => {
   return (
     <form id="registration-form" onSubmit={formik.handleSubmit}>
       <input
-        id="email"
+        id="email-registration"
         type="email"
         name="email"
         placeholder="Email Address"
@@ -42,7 +45,7 @@ const Registration = () => {
         value={formik.values.email}
       />
       <input
-        id="password"
+        id="password-registration"
         type="password"
         name="password"
         placeholder="Password"
@@ -50,7 +53,7 @@ const Registration = () => {
         value={formik.values.password}
       />
       <input
-        id="password_confirmation"
+        id="password_confirmation-registration"
         type="password"
         name="password_confirmation"
         placeholder="Confirm Password"

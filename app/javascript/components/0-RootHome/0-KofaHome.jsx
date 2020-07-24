@@ -1,12 +1,11 @@
 import React from "react";
 import PageDems from "../9-UniComps/2-PageDems/0-PageDems";
 
-const KofaHome = () => {
+const KofaHome = (props) => {
   return (
     <PageDems>
-      <div className="grid grid-cols-2 grid-rows-1 h-full">
-        <div id="one" />
-        <div id="two" />
+      <div className="flex justify-center items-center h-full">
+        <h1>Status: {props.loggedInStatus}</h1>
       </div>
     </PageDems>
   );
