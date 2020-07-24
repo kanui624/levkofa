@@ -50,6 +50,13 @@ const Global = () => {
     });
   };
 
+  const handleLogout = (data) => {
+    setLoginState({
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {},
+    });
+  };
+
   return (
     <Router>
       <div id="global-stack-context">
@@ -65,6 +72,7 @@ const Global = () => {
                 <AdminLogin
                   {...props}
                   handleLogin={handleLogin}
+                  handleLogout={handleLogout}
                   loggedInStatus={loginState.loggedInStatus}
                 />
               )}

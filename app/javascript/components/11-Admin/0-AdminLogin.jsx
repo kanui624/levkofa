@@ -9,6 +9,17 @@ const AdminLogin = (props) => {
     props.history.push("/");
   };
 
+  const triggerHandleLogout = () => {
+    axios
+      .delete("/logout", { withCredentials: true })
+      .then((response) => {
+        props.handleLogout(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -61,6 +72,7 @@ const AdminLogin = (props) => {
             />
             <button type="submit">login</button>
           </form>
+          <button onClick={() => triggerHandleLogout()}>logout</button>
         </div>
       </div>
     </PageDems>
