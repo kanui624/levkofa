@@ -5,7 +5,7 @@ const KofaHome = (props) => {
   return (
     <PageDems>
       <div className="flex justify-center items-center h-full">
-        <h1>Status: {props.loggedInStatus}</h1>
+        <h1>home</h1>
       </div>
     </PageDems>
   );

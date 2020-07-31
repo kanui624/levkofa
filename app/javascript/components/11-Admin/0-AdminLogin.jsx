@@ -30,7 +30,7 @@ const AdminLogin = (props) => {
           email: "",
           password: "",
         }}
-        validationSchema={Yup.object({
+        validationSchema={Yup.object().shape({
           email: Yup.string()
             .email("Incorrect Email")
             .matches(adminEmail.lke, "Incorrect Email")
@@ -87,18 +87,17 @@ const AdminLogin = (props) => {
   const ConditionalLog = () => {
     if (props.loggedInStatus === "LOGGED_OUT") {
       return <AdminForm />;
-    } else {
+    } else if (props.loggedInStatus === "LOGGED_IN") {
       return <LogoutButton />;
+    } else if (props.loggedInStatus === null) {
+      return null;
     }
   };
 
   return (
     <PageDems>
       <div className="flex justify-center items-center h-full">
-        <div className="grid">
-          <h1>Status: {props.loggedInStatus}</h1>
-          <ConditionalLog />
-        </div>
+        <ConditionalLog />
       </div>
     </PageDems>
   );

@@ -24,7 +24,10 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.15'
 
 gem "rack-cors", :require => "rack/cors"
 
+gem 'fast_jsonapi'
+
 # Use Active Storage variant
+gem "aws-sdk-s3", require: false
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb

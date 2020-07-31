@@ -8,7 +8,7 @@ import AdminLogin from "./11-Admin/0-AdminLogin";
 
 const Global = () => {
   const [loginState, setLoginState] = useState({
-    loggedInStatus: "LOGGED_OUT",
+    loggedInStatus: null,
     user: {},
   });
 
@@ -18,7 +18,8 @@ const Global = () => {
       .then((response) => {
         if (
           response.data.logged_in &&
-          loginState.loggedInStatus === "LOGGED_OUT"
+          (loginState.loggedInStatus === "LOGGED_OUT" ||
+            loginState.loggedInStatus === null)
         ) {
           setLoginState({
             loggedInStatus: "LOGGED_IN",
@@ -26,7 +27,8 @@ const Global = () => {
           });
         } else if (
           !response.data.logged_in &&
-          loginState.loggedInStatus === "LOGGED_IN"
+          (loginState.loggedInStatus === "LOGGED_IN" ||
+            loginState.loggedInStatus === null)
         ) {
           setLoginState({
             loggedInStatus: "LOGGED_OUT",
@@ -41,7 +43,7 @@ const Global = () => {
 
   useLayoutEffect(() => {
     checkLoginStatus();
-  }, [loginState.loggedInStatus]);
+  }, [loginState]);
 
   const handleLogin = (data) => {
     setLoginState({
@@ -50,7 +52,7 @@ const Global = () => {
     });
   };
 
-  const handleLogout = (data) => {
+  const handleLogout = () => {
     setLoginState({
       loggedInStatus: "LOGGED_OUT",
       user: {},
